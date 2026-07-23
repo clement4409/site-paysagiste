@@ -1,0 +1,11 @@
+# Médias sources bruts (non utilisés par le site ; le site utilise assets/)
+img vid/
+infos/
+
+# Divers
+_openmenu.html
+_test_menu.html
+node_modules/
+.DS_Store
+Thumbs.db
+.claude/
