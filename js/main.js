@@ -16,16 +16,18 @@ window.addEventListener('scroll', onScroll, { passive: true });
 const burger = document.querySelector('.nav__burger');
 const links = document.querySelector('.nav__links');
 if (burger) {
-  const closeMenu = () => {
-    burger.classList.remove('open');
-    links.classList.remove('open');
-    document.body.classList.remove('menu-open');
-  };
-  burger.addEventListener('click', () => {
-    const isOpen = burger.classList.toggle('open');
+  if (!links.id) links.id = 'nav-links';
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-controls', links.id);
+  const setState = isOpen => {
+    burger.classList.toggle('open', isOpen);
     links.classList.toggle('open', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
-  });
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Menu');
+  };
+  const closeMenu = () => setState(false);
+  burger.addEventListener('click', () => setState(!burger.classList.contains('open')));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   // Fermer en cliquant sur le voile (scrim)
   document.addEventListener('click', e => {

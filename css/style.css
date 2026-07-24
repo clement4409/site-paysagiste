@@ -408,29 +408,41 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   .section { padding: 76px 0; }
   /* Voile sombre derrière le tiroir : isole le menu et permet de fermer au clic */
   body.menu-open { overflow: hidden; }
+  /* Masque le logo quand le tiroir est ouvert (evite le chevauchement) */
+  body.menu-open .nav__logo { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
   body.menu-open::before {
     content: ""; position: fixed; inset: 0; z-index: 80;
     background: rgba(24, 32, 24, .5); backdrop-filter: blur(2px);
     opacity: 1; transition: opacity var(--transition);
   }
   .nav__links {
-    position: fixed; inset: 0 0 0 auto; width: min(72vw, 280px);
-    background: var(--vert-fonce); flex-direction: column; align-items: flex-start;
-    padding: 92px 30px; gap: 20px; transform: translateX(100%);
+    position: fixed; inset: 0 0 0 auto; width: min(74vw, 300px);
+    background: var(--vert-fonce); flex-direction: column; align-items: stretch;
+    padding: 96px 28px 32px; gap: 0; transform: translateX(100%);
     transition: transform var(--transition); z-index: 90;
-    box-shadow: -12px 0 40px rgba(43,43,43,.25);
+    box-shadow: -12px 0 40px rgba(43,43,43,.28);
+    overflow-y: auto;
   }
   .nav__links.open { transform: translateX(0); }
-  .nav__links a { color: var(--creme); font-size: 17px; }
+  .nav__links li { width: 100%; }
+  .nav__links a {
+    display: block; color: var(--creme); font-size: 17px; font-weight: 500;
+    padding: 16px 4px; border-bottom: 1px solid rgba(247,245,239,.12);
+  }
+  .nav__links a::after { display: none; }
   .nav__links a.active { color: var(--vert-clair); }
-  .nav__links a::after { background: var(--vert-clair); }
-  .nav__links a.nav__cta {
-    margin-top: 8px; background: var(--creme); color: var(--vert-fonce);
-    border-color: var(--creme); width: 100%; justify-content: center;
+  /* Bouton RDV : plein, texte vert foncé — on force la couleur car la regle
+     globale hero-light rend le texte creme (invisible sur fond creme) */
+  .nav__links li:last-child { margin-top: 22px; }
+  .nav__links a.nav__cta,
+  body.hero-light .site-header:not(.scrolled) .nav__links a.nav__cta {
+    background: var(--creme); color: var(--vert-fonce); border: none;
+    border-radius: 40px; padding: 14px 24px; font-weight: 600;
+    text-align: center; box-shadow: 0 6px 18px rgba(43,43,43,.22);
   }
   /* Bouton menu : cercle vert plein, toujours visible (fond blanc comme image) */
   .nav__burger {
-    display: flex; z-index: 101; position: fixed; right: 18px; top: 15px;
+    display: flex; z-index: 101; position: fixed; right: 18px; top: 12px;
     width: 42px; height: 42px; align-items: center; justify-content: center;
     gap: 4px; padding: 0; border-radius: 50%;
     background: var(--vert-fonce);
@@ -440,6 +452,11 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   .nav__burger span { width: 16px; height: 2px; background: var(--creme); border-radius: 2px; transition: var(--transition); }
   /* Neutralise la règle globale qui rendait les barres foncées sur le hero */
   body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(--creme); }
+  /* Etat ouvert (X) : cercle creme translucide + contour pour le detacher du tiroir vert */
+  .nav__burger.open {
+    background: rgba(247,245,239,.14);
+    border: 1px solid rgba(247,245,239,.35);
+  }
   .nav__burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav__burger.open span:nth-child(2) { opacity: 0; }
   .nav__burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
@@ -456,4 +473,14 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   .hero__actions { width: 100%; gap: 14px; padding: 0 20px; flex-wrap: nowrap; }
   .hero__actions .btn { flex: 1; min-width: 0; justify-content: center; padding: 11px 10px; font-size: 12px; gap: 5px; }
   .hero__actions .btn svg { width: 14px; height: 14px; }
+}
+
+/* Accessibilité : respecte le réglage système "réduire les animations" */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
