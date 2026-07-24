@@ -387,7 +387,10 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
 .socials a { width: 40px; height: 40px; border-radius: 50%; background: rgba(247,245,239,.08); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
 .socials a:hover { background: var(--vert); transform: translateY(-3px); }
 .socials svg { width: 18px; height: 18px; color: var(--creme); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; font-size: 13px; color: var(--taupe); flex-wrap: wrap; gap: 10px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; font-size: 13px; color: var(--taupe); flex-wrap: wrap; gap: 10px 20px; }
+.footer-credit { width: 100%; text-align: center; margin-top: 12px; padding-top: 14px; border-top: 1px solid rgba(139,132,119,.25); font-size: 12.5px; }
+.footer-credit a { color: var(--vert-clair); font-weight: 600; transition: color var(--transition); }
+.footer-credit a:hover { color: var(--creme); }
 
 /* --------- Animations GSAP (état initial) --------- */
 .reveal { opacity: 0; }
