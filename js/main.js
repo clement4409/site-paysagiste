@@ -16,13 +16,24 @@ window.addEventListener('scroll', onScroll, { passive: true });
 const burger = document.querySelector('.nav__burger');
 const links = document.querySelector('.nav__links');
 if (burger) {
+  const closeMenu = () => {
+    burger.classList.remove('open');
+    links.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  };
   burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    links.classList.toggle('open');
+    const isOpen = burger.classList.toggle('open');
+    links.classList.toggle('open', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
   });
-  links.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => { burger.classList.remove('open'); links.classList.remove('open'); })
-  );
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  // Fermer en cliquant sur le voile (scrim)
+  document.addEventListener('click', e => {
+    if (document.body.classList.contains('menu-open') &&
+        !links.contains(e.target) && !burger.contains(e.target)) closeMenu();
+  });
+  // Fermer avec Échap
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 }
 
 /* ---------- Animations GSAP ---------- */
