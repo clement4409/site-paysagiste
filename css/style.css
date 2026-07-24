@@ -152,7 +152,7 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   font-weight: 700; letter-spacing: .18em; text-transform: uppercase; font-size: 13px;
   color: var(--vert-pale); margin-bottom: 22px;
 }
-.hero__eyebrow::before { content: ""; width: 40px; height: 1.5px; background: var(--vert-clair); }
+.hero__eyebrow::before, .hero__eyebrow::after { content: ""; width: 40px; height: 1.5px; background: var(--vert-clair); }
 .hero h1 { color: var(--creme); font-size: clamp(3rem, 7.5vw, 5.6rem); margin-bottom: 24px; letter-spacing: -.01em; }
 .hero h1 em { font-style: italic; color: var(--vert-clair); }
 .hero__sub { font-size: clamp(1.12rem, 2.1vw, 1.38rem); max-width: 590px; color: rgba(247,245,239,.92); margin: 0 auto 36px; }
@@ -414,25 +414,32 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   .nav__links.open { transform: translateX(0); }
   .nav__links a { color: var(--creme); font-size: 18px; }
   .nav__links a::after { background: var(--vert-clair); }
-  /* Bouton menu (pastille lisible sur toute image de hero) */
+  /* Bouton menu : petit cercle vert plein, lisible sur image comme sur fond blanc */
   .nav__burger {
-    display: flex; z-index: 101; position: fixed; right: 16px; top: 12px;
-    width: 44px; height: 44px; align-items: center; justify-content: center;
-    gap: 5px; padding: 0; border-radius: 50%;
-    background: rgba(43,43,43,.4); backdrop-filter: blur(4px);
-    box-shadow: 0 4px 14px rgba(43,43,43,.25); transition: background var(--transition);
+    display: flex; z-index: 101; position: fixed; right: 18px; top: 16px;
+    width: 38px; height: 38px; align-items: center; justify-content: center;
+    gap: 4px; padding: 0; border-radius: 50%;
+    background: var(--vert-fonce);
+    box-shadow: 0 3px 10px rgba(43,43,43,.28); transition: background var(--transition);
   }
   .site-header.scrolled .nav__burger { background: var(--vert-fonce); }
-  .nav__burger span { width: 20px; height: 2px; background: var(--creme); }
+  .nav__burger span { width: 17px; height: 2px; background: var(--creme); border-radius: 2px; }
   body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(--creme); }
   .nav__burger.open { background: var(--vert-fonce); }
-  .nav__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--creme); }
+  .nav__burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--creme); }
   .nav__burger.open span:nth-child(2) { opacity: 0; }
-  .nav__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--creme); }
+  .nav__burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--creme); }
   .grid-3, .grid-2, .steps, .gallery, .values { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .form-card { padding: 28px 22px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-  .hero__actions { width: 100%; }
-  .hero__actions .btn { flex: 1; justify-content: center; }
+  /* Hero mobile : textes et boutons réduits */
+  .hero__content { padding: 60px 0 96px; }
+  .hero__eyebrow { font-size: 10.5px; letter-spacing: .14em; gap: 8px; margin-bottom: 16px; }
+  .hero__eyebrow::before, .hero__eyebrow::after { width: 26px; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 16px; }
+  .hero__sub { font-size: .98rem; margin-bottom: 26px; }
+  .hero__actions { width: 100%; gap: 10px; }
+  .hero__actions .btn { flex: 1; justify-content: center; padding: 12px 14px; font-size: 12.5px; gap: 6px; }
+  .hero__actions .btn svg { width: 15px; height: 15px; }
 }
