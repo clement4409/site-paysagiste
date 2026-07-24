@@ -410,6 +410,12 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   body.menu-open { overflow: hidden; }
   /* Masque le logo quand le tiroir est ouvert (evite le chevauchement) */
   body.menu-open .nav__logo { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+  /* Le backdrop-filter du header scrolle enferme les enfants fixed (le tiroir).
+     On le neutralise a l ouverture pour que le tiroir couvre tout l ecran. */
+  body.menu-open .site-header {
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    background: transparent !important; box-shadow: none !important;
+  }
   body.menu-open::before {
     content: ""; position: fixed; inset: 0; z-index: 80;
     background: rgba(24, 32, 24, .5); backdrop-filter: blur(2px);
@@ -442,7 +448,7 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
   }
   /* Bouton menu : cercle vert plein, toujours visible (fond blanc comme image) */
   .nav__burger {
-    display: flex; z-index: 101; position: fixed; right: 18px; top: 12px;
+    display: flex; z-index: 101; position: fixed; right: 18px; top: 8px;
     width: 42px; height: 42px; align-items: center; justify-content: center;
     gap: 4px; padding: 0; border-radius: 50%;
     background: var(--vert-fonce);
