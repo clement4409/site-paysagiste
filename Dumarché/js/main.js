@@ -98,6 +98,17 @@ if (window.gsap) {
   });
 }
 
+/* ---------- Accordéon des prestations ---------- */
+document.querySelectorAll('.accordion').forEach(acc => {
+  acc.querySelectorAll('.accordion__trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion__item');
+      const isOpen = item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+});
+
 /* ---------- Avant / Après : slider ---------- */
 document.querySelectorAll('.ba-slider').forEach(slider => {
   const after = slider.querySelector('.ba-slider__after');

@@ -189,18 +189,77 @@ body.hero-light .site-header:not(.scrolled) .nav__burger span { background: var(
 /* --------- Grille services --------- */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.service-card {
-  background: var(--creme); border: 1px solid rgba(139,132,119,.16);
-  border-radius: var(--radius); padding: 38px 32px; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+/* --------- Prestations — accordéon --------- */
+.accordion {
+  border-top: 1px solid rgba(139,132,119,.28);
+  max-width: 920px; margin-left: auto; margin-right: auto;
 }
-.service-card:hover { transform: translateY(-8px); box-shadow: var(--ombre); border-color: var(--vert-clair); }
-.service-card__icon {
-  width: 58px; height: 58px; border-radius: 14px; background: var(--vert-pale);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 22px; color: var(--vert-fonce);
+.accordion__item { border-bottom: 1px solid rgba(139,132,119,.28); }
+
+.accordion__trigger {
+  width: 100%; display: flex; align-items: center; gap: 22px;
+  background: none; border: none; cursor: pointer; text-align: left;
+  padding: 26px 8px; font-family: inherit; color: inherit;
+  transition: padding-left var(--transition);
 }
-.service-card__icon svg { width: 28px; height: 28px; }
-.service-card h3 { font-size: 1.55rem; margin-bottom: 10px; }
-.service-card p { color: var(--taupe); font-size: .98rem; }
+.accordion__trigger:hover { padding-left: 16px; }
+.accordion__trigger:focus-visible { outline: 2px solid var(--vert); outline-offset: 4px; border-radius: 6px; }
+
+.accordion__num {
+  flex: none; font-family: var(--serif); font-size: 1.7rem; font-weight: 600; line-height: 1;
+  color: var(--vert-clair); width: 42px;
+  transition: color var(--transition);
+}
+.accordion__icon {
+  flex: none; width: 46px; height: 46px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--vert-pale); color: var(--vert-fonce);
+  transition: background var(--transition), color var(--transition);
+}
+.accordion__icon svg { width: 24px; height: 24px; }
+
+.accordion__text { flex: 1 1 auto; display: flex; flex-direction: column; gap: 3px; }
+.accordion__title { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--vert-fonce); line-height: 1.15; }
+.accordion__sub { font-size: .95rem; color: var(--taupe); }
+
+.accordion__toggle {
+  flex: none; width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(139,132,119,.4);
+  display: flex; align-items: center; justify-content: center; color: var(--vert-fonce);
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+}
+.accordion__toggle svg { width: 18px; height: 18px; }
+
+/* État ouvert */
+.accordion__item.open .accordion__num { color: var(--vert); }
+.accordion__item.open .accordion__icon { background: var(--vert); color: #fff; }
+.accordion__item.open .accordion__toggle {
+  transform: rotate(45deg); background: var(--vert-fonce); border-color: var(--vert-fonce); color: #fff;
+}
+
+/* Panneau dépliant (transition fluide via grid-template-rows) */
+.accordion__panel {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition);
+}
+.accordion__item.open .accordion__panel { grid-template-rows: 1fr; }
+.accordion__panel-inner { overflow: hidden; }
+.accordion__panel-inner > * { margin: 0; }
+.accordion__panel .list-check { padding-left: 90px; }
+.accordion__panel-inner p { color: var(--taupe); padding-left: 90px; padding-bottom: 4px; }
+.accordion__item.open .accordion__panel-inner { padding-bottom: 28px; }
+
+@media (max-width: 640px) {
+  .accordion__trigger { gap: 14px; padding: 20px 4px; }
+  .accordion__trigger:hover { padding-left: 4px; }
+  .accordion__num { display: none; }
+  .accordion__icon { width: 40px; height: 40px; }
+  .accordion__title { font-size: 1.2rem; }
+  .accordion__sub { font-size: .88rem; }
+  .accordion__panel .list-check,
+  .accordion__panel-inner p { padding-left: 54px; }
+}
 
 /* --------- Split (image + texte) --------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }

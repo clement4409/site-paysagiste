@@ -71,37 +71,146 @@
         <h2 class="section-title">Prendre soin de vos extérieurs</h2>
         <p class="section-lead">De l'entretien régulier à l'aménagement complet, chaque intervention est réalisée avec soin, dans le respect de vos attentes et de l'environnement.</p>
       </div>
-      <div class="grid-3" data-stagger style="margin-top:56px">
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C8 6 8 12 12 16c4-4 4-10 0-14zM12 16v6M8 20l4 2 4-2"/></svg></div>
-          <h3>Entretien de jardin</h3>
-          <p>Tonte, désherbage, débroussaillage et entretien régulier pour un jardin toujours net et accueillant tout au long de l'année.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3v18M6 8h9l-2-2.5L15 3H6M18 12v9M18 15h-6"/></svg></div>
-          <h3>Taille de haies</h3>
-          <p>Taille précise et régulière de vos haies et arbustes pour des formes nettes, une belle densité et une croissance maîtrisée.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
-          <h3>Aménagement paysager</h3>
-          <p>Conception et création d'espaces harmonieux : massifs, plantations, allées et mises en scène pensées pour durer.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v4M12 21v-4M3 12h4M21 12h-4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
-          <h3>Conseils personnalisés</h3>
-          <p>Un accompagnement à l'écoute pour choisir les bonnes plantes et valoriser votre espace selon vos envies et votre budget.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 20h10M9 20V9a3 3 0 016 0v11M5 9l7-6 7 6"/></svg></div>
-          <h3>Massifs & plantations</h3>
-          <p>Création de massifs fleuris, plantation d'arbustes et de vivaces pour apporter couleur et volume à votre jardin.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 22V11M4 11c0-3 2-5 5-5M20 22V14M20 14c0-3-2-4-5-4M9 6c0-2 1.5-4 3-4 0 2-1 4-3 4zM12 22V8"/></svg></div>
-          <h3>Nettoyage & remise en état</h3>
-          <p>Remise en valeur des jardins laissés à l'abandon : nettoyage, coupe et repartir sur une base saine et durable.</p>
-        </article>
+      <div class="accordion" data-stagger style="margin-top:56px">
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-1" id="presta-1-btn">
+            <span class="accordion__num">01</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C8 6 8 12 12 16c4-4 4-10 0-14zM12 16v6M8 20l4 2 4-2"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Entretien de jardin</span>
+              <span class="accordion__sub">Tonte, désherbage, débroussaillage</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-1" role="region" aria-labelledby="presta-1-btn">
+            <div class="accordion__panel-inner">
+              <p>Un jardin net toute l'année, en ponctuel ou en contrat régulier.</p>
+              <ul class="list-check">
+                <li>Tonte et finitions</li>
+                <li>Désherbage des massifs et allées</li>
+                <li>Débroussaillage</li>
+                <li>Évacuation des déchets verts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-2" id="presta-2-btn">
+            <span class="accordion__num">02</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3v18M6 8h9l-2-2.5L15 3H6M18 12v9M18 15h-6"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Taille de haies</span>
+              <span class="accordion__sub">Formes nettes, croissance maîtrisée</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-2" role="region" aria-labelledby="presta-2-btn">
+            <div class="accordion__panel-inner">
+              <p>Haies et arbustes taillés avec précision, au bon moment.</p>
+              <ul class="list-check">
+                <li>Taille de formation et d'entretien</li>
+                <li>Hauteur et largeur maîtrisées</li>
+                <li>Évacuation des résidus</li>
+                <li>Conseils sur la bonne période</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-3" id="presta-3-btn">
+            <span class="accordion__num">03</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Aménagement paysager</span>
+              <span class="accordion__sub">Création d'espaces sur mesure</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-3" role="region" aria-labelledby="presta-3-btn">
+            <div class="accordion__panel-inner">
+              <p>De l'idée à la réalisation clé en main, des extérieurs pensés pour durer.</p>
+              <ul class="list-check">
+                <li>Étude et plan personnalisé</li>
+                <li>Massifs, allées et bordures</li>
+                <li>Végétaux adaptés à votre sol</li>
+                <li>Réalisation complète</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-4" id="presta-4-btn">
+            <span class="accordion__num">04</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v4M12 21v-4M3 12h4M21 12h-4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Conseils personnalisés</span>
+              <span class="accordion__sub">Selon vos envies et votre budget</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-4" role="region" aria-labelledby="presta-4-btn">
+            <div class="accordion__panel-inner">
+              <p>On vous guide pour faire les bons choix, sans dépenser inutilement.</p>
+              <ul class="list-check">
+                <li>Diagnostic de votre terrain</li>
+                <li>Plantes adaptées à l'exposition</li>
+                <li>Plan de plantation</li>
+                <li>Selon votre budget</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-5" id="presta-5-btn">
+            <span class="accordion__num">05</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 20h10M9 20V9a3 3 0 016 0v11M5 9l7-6 7 6"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Massifs & plantations</span>
+              <span class="accordion__sub">Couleur et volume, 4 saisons</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-5" role="region" aria-labelledby="presta-5-btn">
+            <div class="accordion__panel-inner">
+              <p>Des massifs colorés, pensés pour toute la saison et faciles à entretenir.</p>
+              <ul class="list-check">
+                <li>Préparation du sol</li>
+                <li>Arbustes et vivaces</li>
+                <li>Paillage</li>
+                <li>Compositions 4 saisons</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="presta-6" id="presta-6-btn">
+            <span class="accordion__num">06</span>
+            <span class="accordion__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 22V11M4 11c0-3 2-5 5-5M20 22V14M20 14c0-3-2-4-5-4M9 6c0-2 1.5-4 3-4 0 2-1 4-3 4zM12 22V8"/></svg></span>
+            <span class="accordion__text">
+              <span class="accordion__title">Nettoyage & remise en état</span>
+              <span class="accordion__sub">Redonner vie à un jardin à l'abandon</span>
+            </span>
+            <span class="accordion__toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="accordion__panel" id="presta-6" role="region" aria-labelledby="presta-6-btn">
+            <div class="accordion__panel-inner">
+              <p>Jardin envahi ? On remet tout à plat pour un extérieur propre et praticable.</p>
+              <ul class="list-check">
+                <li>Débroussaillage complet</li>
+                <li>Élagage léger et coupe</li>
+                <li>Évacuation des déchets verts</li>
+                <li>Remise en propreté</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -172,13 +281,13 @@
           <div class="footer-logo"><img class="logo-img" src="assets/img/logo.svg" alt="Dumarché Paysage"></div>
           <p>Création, entretien et embellissement de vos jardins et espaces verts à Nantes et ses environs.</p>
           <div class="socials">
-            <a href="https://instagram.com/cherki_ballon_dor" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://instagram.com/q7zx4m9kv2" target="_blank" rel="noopener" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
             <a href="#" aria-label="Facebook">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-3 1.6-3 3.5V11H9v3h2v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg>
             </a>
-            <a href="mailto:clement.bach09@gmail.com" aria-label="Email">
+            <a href="mailto:k7zq4m@x9v2t.zz" aria-label="Email">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 2.2V18h16V7.2l-8 5.3-8-5.3z"/></svg>
             </a>
           </div>
@@ -196,9 +305,9 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:0667676767">06 67 67 67 67</a></li>
-            <li><a href="mailto:clement.bach09@gmail.com">clement.bach09@gmail.com</a></li>
-            <li><a href="https://instagram.com/cherki_ballon_dor" target="_blank" rel="noopener">@cherki_ballon_dor</a></li>
+            <li><a href="tel:X9K2Q7M4Z1">X9 K2 Q7 M4 Z1</a></li>
+            <li><a href="mailto:k7zq4m@x9v2t.zz">k7zq4m@x9v2t.zz</a></li>
+            <li><a href="https://instagram.com/q7zx4m9kv2" target="_blank" rel="noopener">@q7zx4m9kv2</a></li>
             <li>Nantes (44)</li>
           </ul>
         </div>
